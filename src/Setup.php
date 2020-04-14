@@ -27,7 +27,7 @@ class Setup extends Command
     protected function configure()
     {
         $this->setName('new')
-            ->setDescription('Create a new Laravel application');
+            ->setDescription('Create a new local Vagrant environment');
     }
 
     /**
