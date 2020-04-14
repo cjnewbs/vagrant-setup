@@ -1,0 +1,5 @@
+---
+virtual_machine_name: "$YOUR_PROJECT"
+virtual_machine_ip: "192.168.99.99"
+virtual_machine_domain: "$DOMAIN"
+virtual_machine_memory: "$MEMORY" # Value in MB.

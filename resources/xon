@@ -1,0 +1,5 @@
+#!/bin/bash
+# Turn on XDebug and reload php-fpm
+sudo sed -i 's/^#zend_extension=xdebug.so$/zend_extension=xdebug.so/g' /etc/php/7.4/fpm/conf.d/20-xdebug.ini
+sudo sed -i 's/^#zend_extension=xdebug.so$/zend_extension=xdebug.so/g' /etc/php/7.4/cli/conf.d/20-xdebug.ini
+sudo service php7.4-fpm reload

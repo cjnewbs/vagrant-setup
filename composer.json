@@ -1,0 +1,34 @@
+{
+    "name": "newbury/vagrant-setup",
+    "description": "Generate files for Vagrant local environment",
+    "license": "MIT",
+    "version": "0.1",
+    "authors": [
+        {
+            "name": "Craig Newbury",
+            "email": "craig@newbury.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.9",
+        "symfony/console": "^4.0|^5.0",
+        "symfony/filesystem": "^4.0|^5.0"
+    },
+    "bin": [
+        "bin/vagrant-setup"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Newbury\\VagrantSetup\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    }
+}

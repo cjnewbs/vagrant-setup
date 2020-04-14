@@ -1,0 +1,3 @@
+USE `magento`;
+UPDATE `admin_user` SET `password` = CONCAT(MD5('password'), ':0');
+UPDATE `core_config_data` SET `value` = 'https://$DOMAIN/' WHERE `path` = 'web/unsecure/base_url';
