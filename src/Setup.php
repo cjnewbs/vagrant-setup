@@ -17,7 +17,7 @@ class Setup extends Command
     /** @var Filesystem */
     private $fileSystem;
 
-    const FRAMEWORKS = ['Magento'];
+    const FRAMEWORKS = ['Magento', 'Laravel'];
 
     /**
      * Configure the command options.
