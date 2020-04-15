@@ -1,0 +1,20 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'yaml'
+
+conf = YAML.load_file('vagrant.yaml')
+
+Vagrant.configure("2") do |config|
+    config.vm.define conf['virtual_machine_name'] do |web|
+        web.vm.box = "debian/contrib-jessie64"
+        web.vm.network :private_network, ip: conf['virtual_machine_ip']
+        web.vm.synced_folder ".", "/home/vagrant/www", type: "nfs", mount_options: ['rw', 'vers=3', 'tcp'], linux__nfs_options: ['rw','no_subtree_check','all_squash','async']
+        web.vm.provision :shell, :path => "vagrant/install.sh", :env => {
+            "DOMAIN" => conf['virtual_machine_domain']
+        }
+        web.vm.provider "virtualbox" do |v|
+            v.memory = conf['virtual_machine_memory']
+        end
+    end
+end
