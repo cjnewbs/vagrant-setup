@@ -125,7 +125,7 @@ sudo mkdir /etc/nginx/certs
 cd /etc/nginx/certs
 echo 'Creating private key'
 sudo openssl genrsa -out "laravel.key" 2048
-sudo openssl req -new -key "laravel§.key" -out "laravel.csr" -subj "/C=GB"
+sudo openssl req -new -key "laravel.key" -out "laravel.csr" -subj "/C=GB"
 sudo openssl x509 -req -days 365 -in "laravel.csr" -signkey "laravel.key" -out "laravel.crt"
 
 # restart nginx and php
